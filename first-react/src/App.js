@@ -6,9 +6,9 @@ import ProductList from "./ProductList";
 function App() {
   return (
     <div>
-      {/* <Link to="/product_detail">產品資料</Link>
-      <Link to="/checkout">購物車</Link> */}
       <BrowserRouter>
+        <Link to="/product_detail">產品資料</Link>
+        <Link to="/checkout">購物車</Link>
         <Routes>
           {/* "/"代表首頁   */}
           <Route path="/" element={<ProductList />}></Route>
