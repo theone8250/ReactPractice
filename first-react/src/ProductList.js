@@ -1,6 +1,6 @@
 import Link from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
+import styles from "./ProductList.module.css";
 export default function ProductList() {
   let productList = [
     {
@@ -51,12 +51,15 @@ export default function ProductList() {
       <h1 style={{ backgroundColor: "orange" }}>請選擇要買的東西</h1>
       <div>
         {productList.map((product) => (
-          <div key={product.id}>
+          <div className={styles.productBorder} key={product.id}>
             {product.name}
             <br />
             {product.price}
             <br />
-            <img src={process.env.PUBLIC_URL + "/img/" + product.image} />
+            <img
+              src={process.env.PUBLIC_URL + "/img/" + product.image}
+              alt=""
+            />
             <br />
             {product.description}
             <br />
