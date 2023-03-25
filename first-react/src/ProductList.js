@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import styles from "./ProductList.module.css";
 import Title from "./Title";
+import QuantityBtn from "./QuantityBtn";
 export default function ProductList() {
   let [productList, setProductList] = useState([]);
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function ProductList() {
             <br />
             {product.description}
             <br />
+            <QuantityBtn/>
           </div>
         ))}
       </div>
