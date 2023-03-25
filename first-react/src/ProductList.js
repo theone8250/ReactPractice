@@ -5,6 +5,7 @@ import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
 export default function ProductList() {
   let [productList, setProductList] = useState([]);
+
   useEffect(() => {
     //1 : 無第二個參數 : component每次render都會觸發
     //2 : Dependency Array是空array時 : 只會在第一次網頁render時會觸發
@@ -13,6 +14,7 @@ export default function ProductList() {
       .then((response) => response.json())
       .then((data) => setProductList(data));
   }, []); // <==  Dependency Array
+
   return (
     <div>
       <Title mainTitle="請選擇要買的東西" />
@@ -32,7 +34,7 @@ export default function ProductList() {
             <br />
             {product.description}
             <br />
-            <QuantityBtn/>
+            <QuantityBtn productInfo={product} />
           </div>
         ))}
       </div>
