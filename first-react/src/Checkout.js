@@ -5,7 +5,7 @@ import QuantityBtn from "./QuantityBtn";
 import Title from "./Title";
 
 export default function CheckOut() {
-  let cartItems = useContext(CartContext);
+  let {cartItems} = useContext(CartContext);
   let cartEmpty = cartItems.length <= 0 ? true : false;
 
   let grandTotal = cartItems.reduce((total, product) => {
