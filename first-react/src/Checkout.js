@@ -5,7 +5,7 @@ import QuantityBtn from "./QuantityBtn";
 import Title from "./Title";
 
 export default function CheckOut() {
-  let {cartItems} = useContext(CartContext);
+  let { cartItems } = useContext(CartContext);
   let cartEmpty = cartItems.length <= 0 ? true : false;
 
   let grandTotal = cartItems.reduce((total, product) => {
@@ -15,7 +15,8 @@ export default function CheckOut() {
   const freeShippingPrice = 99;
 
   return (
-    <div>
+    //React Fragment簡寫
+    <>
       <Title mainTitle="你的購物車" />
       {cartEmpty && (
         <div>
@@ -65,6 +66,6 @@ export default function CheckOut() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import styles from "./ProductList.module.css";
+// import styles from "./ProductList.module.css";
 import Title from "./Title";
 import QuantityBtn from "./QuantityBtn";
 export default function ProductList() {
@@ -16,11 +16,12 @@ export default function ProductList() {
   }, []); // <==  Dependency Array
 
   return (
-    <div>
+    //React Fragment簡寫
+    <>
       <Title mainTitle="請選擇要買的東西" />
       <div>
         {productList.map((product) => (
-          <div className={styles.productBorder} key={product.id}>
+          <React.Fragment key={product.id}>
             {product.name}
             <br />
             {product.price}
@@ -35,9 +36,9 @@ export default function ProductList() {
             {product.description}
             <br />
             <QuantityBtn productInfo={product} />
-          </div>
+          </React.Fragment>
         ))}
       </div>
-    </div>
+    </>
   );
 }
